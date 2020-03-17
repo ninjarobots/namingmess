@@ -9,3 +9,15 @@ services:
       - 80:80
     volumes:
       - ./:/usr/share/nginx/html/
+
+dictionary_gen:
+    container_name: dictionary_gen
+    image: registry.dev.net:5000/python:3.7.3
+    volumes:
+      - ./dictionary:/dictionary
+    command:
+      - /bin/bash
+      - -c
+      - |
+        cd /dictionary/dictionary_generator/
+        python3 build_dictionary.py
