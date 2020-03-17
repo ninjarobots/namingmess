@@ -1,0 +1,11 @@
+version: "2.2"
+
+services:
+  project_name_gen:
+    container_name: project_name_gen
+    image: nginx:1.17.5
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./:/usr/share/nginx/html/
