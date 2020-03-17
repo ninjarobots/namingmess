@@ -10,9 +10,9 @@ services:
     volumes:
       - ./:/usr/share/nginx/html/
 
-dictionary_gen:
+  dictionary_gen:
     container_name: dictionary_gen
-    image: registry.dev.net:5000/python:3.7.3
+    image: python:3.7.3
     volumes:
       - ./dictionary:/dictionary
     command:
